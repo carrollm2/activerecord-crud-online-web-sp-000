@@ -113,6 +113,8 @@ def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
+  id_array = []
+  Movie.all.map {|m| id_array << m.id }
   binding.pry
-  Movie.destroy([])
+  Movie.destroy([id_array])
 end
