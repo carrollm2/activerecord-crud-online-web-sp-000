@@ -115,6 +115,5 @@ def can_destroy_all_items_at_once
   end
   id_array = []
   Movie.all.map {|m| id_array << m.id }
-  binding.pry
   Movie.destroy([id_array])
 end
